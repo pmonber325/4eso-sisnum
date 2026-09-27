@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Operación N.E.X.U.S. — Escape Room</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <div class="topbar">
+    <span class="brand">// OPERACIÓN N.E.X.U.S.</span>
+    <span class="timer" id="timerBox">45:00</span>
+  </div>
+  <div class="progress-rail"><div class="progress-fill" id="progressFill"></div></div>
+
+  <!-- INTRO -->
+  <section class="screen active" id="screen-intro">
+    <div class="banner">
+      <h1>ADVERTENCIA CRÍTICA: SISTEMA COMPROMETIDO</h1>
+      <p>La Inteligencia Artificial <strong>N.E.X.U.S.</strong> ha tomado el control del Mainframe central del instituto.</p>
+      <p>Tiempo estimado para el borrado total de datos (WIPE): <strong>45:00</strong></p>
+      <p>Eres nuestra última esperanza. Tu misión: infiltrarte en el sistema, vulnerar las capas de seguridad traduciendo sus protocolos nativos, e inyectar un antivirus de sobreescritura.</p>
+    </div>
+    <p>Anota cada resultado en tu bitácora: al final tendrás que entregar el procedimiento completo, no solo las respuestas.</p>
+    <button onclick="startMission()">&gt; Presiona aquí para iniciar operación: OVERRIDE</button>
+  </section>
+
+  <!-- NIVEL 1 -->
+  <section class="screen" id="screen-l1">
+    <h2>Nivel 1 — Cortafuegos polimórfico</h2>
+    <p>Para puentear el cortafuegos, sobreescribe los valores de seguridad en los lenguajes nativos de la máquina.</p>
+
+    <div class="card" data-card="1-1">
+      <div class="label">RETO 1.1 · Puerto de acceso</div>
+      <p>El puerto de acceso es el <strong>28</strong> (decimal). Tradúcelo a binario.</p>
+      <div class="row">
+        <input type="text" id="in-1-1" placeholder="Respuesta en binario">
+        <button onclick="check('1-1')">Verificar</button>
+      </div>
+      <div class="feedback" id="fb-1-1"></div>
+    </div>
+
+    <div class="card" data-card="1-2">
+      <div class="label">RETO 1.2 · Llave de encriptación</div>
+      <p>La llave de encriptación es <strong>1101</strong> (binario). Tradúcela a decimal.</p>
+      <div class="row">
+        <input type="text" id="in-1-2" placeholder="Respuesta en decimal">
+        <button onclick="check('1-2')">Verificar</button>
+      </div>
+      <div class="feedback" id="fb-1-2"></div>
+    </div>
+
+    <div class="card" data-card="1-3">
+      <div class="label">RETO 1.3 · Registro de memoria corrupto</div>
+      <p>El registro de memoria corrupto es <strong>#3A9</strong> (hexadecimal). Pásalo a decimal.</p>
+      <div class="row">
+        <input type="text" id="in-1-3" placeholder="Respuesta en decimal">
+        <button onclick="check('1-3')">Verificar</button>
+      </div>
+      <div class="feedback" id="fb-1-3"></div>
+    </div>
+
+    <details class="help">
+      <summary>Módulo de ayuda táctica</summary>
+      <ul>
+        <li><strong>Decimal → Binario:</strong> divide sucesivamente entre 2 y lee los restos de abajo hacia arriba.</li>
+        <li><strong>Binario → Decimal:</strong> suma las potencias de 2 (2⁰=1, 2¹=2, 2²=4, 2³=8…) donde hay un 1.</li>
+        <li><strong>Hexadecimal (base 16):</strong> 0-9, A(10), B(11), C(12), D(13), E(14), F(15).</li>
+      </ul>
+    </details>
+  </section>
+
+  <!-- NIVEL 2 -->
+  <section class="screen" id="screen-l2">
+    <h2>Nivel 2 — Extracción de carga útil</h2>
+    <p>Cortafuegos vulnerado. N.E.X.U.S. camufla los registros y bloquea la descarga del antivirus.</p>
+
+    <div class="card" data-card="2-1">
+      <div class="label">MÓDULO 1 · Intercepción de comunicaciones</div>
+      <p>Mensaje interceptado en código ASCII extendido:<br><strong>01010011 01001111 01010011</strong></p>
+      <p class="hint">Pista: pasa cada byte a decimal. En la tabla ASCII, 65 es 'A'. ¿Qué palabra de 3 letras se transmite?</p>
+      <div class="row">
+        <input type="text" id="in-2-1" placeholder="Palabra descifrada">
+        <button onclick="check('2-1')">Verificar</button>
+      </div>
+      <div class="feedback" id="fb-2-1"></div>
+    </div>
+
+    <div class="card" data-card="2-2">
+      <div class="label">MÓDULO 2 · Inyección de antivirus (parte 1)</div>
+      <p>El paquete del antivirus ocupa exactamente <strong>0.2 GB</strong>. (1 GB = 1024 MB, 1 MB = 1024 KB, 1 KB = 1024 B)</p>
+      <p>¿Cuántos Bytes exactos contiene el antivirus?</p>
+      <div class="row">
+        <input type="text" id="in-2-2" placeholder="Bytes">
+        <button onclick="check('2-2')">Verificar</button>
+      </div>
+      <div class="feedback" id="fb-2-2"></div>
+    </div>
+
+    <div class="card" data-card="2-3">
+      <div class="label">MÓDULO 2 · Inyección de antivirus (parte 2)</div>
+      <p>Tu conexión táctica transfiere datos a <strong>115 Mbps</strong> (megabits por segundo).</p>
+      <p>¿A qué velocidad real en Megabytes por segundo (MBps) se está descargando?</p>
+      <div class="row">
+        <input type="text" id="in-2-3" placeholder="MBps">
+        <button onclick="check('2-3')">Verificar</button>
+      </div>
+      <div class="feedback" id="fb-2-3"></div>
+    </div>
+  </section>
+
+  <!-- NIVEL 3 / JEFE FINAL -->
+  <section class="screen" id="screen-l3">
+    <h2>Jefe final — Núcleo N.E.X.U.S.</h2>
+    <p>La IA ha emergido y bloqueado el puerto de inyección con un cifrado compuesto. Resuelve la cadena en orden; si fallas, el WIPE será irreversible.</p>
+
+    <div class="card" data-card="3-1">
+      <div class="label">CANDADO 1</div>
+      <p>El delincuente cibernético dejó un rastro hexadecimal. Fragmento MAC: <strong>4F</strong> y <strong>4B</strong>. Convierte cada uno a decimal (sepáralos con un espacio o una coma).</p>
+      <div class="row">
+        <input type="text" id="in-3-1" placeholder="ej: 13, 93">
+        <button onclick="check('3-1')">Verificar</button>
+      </div>
+      <div class="feedback" id="fb-3-1"></div>
+    </div>
+
+    <div class="card" data-card="3-2" style="opacity:.5">
+      <div class="label">CANDADO 2</div>
+      <p>Usa los dos números decimales del candado anterior y búscalos en la tabla ASCII. ¿Cuál es el mensaje de 2 letras que abre la puerta?</p>
+      <div class="row">
+        <input type="text" id="in-3-2" placeholder="Mensaje de 2 letras" disabled>
+        <button onclick="check('3-2')" disabled id="btn-3-2">Verificar</button>
+      </div>
+      <div class="feedback" id="fb-3-2"></div>
+      <div class="locked-note" id="lock-3-2">🔒 Resuelve el Candado 1 primero.</div>
+    </div>
+
+    <div class="card" data-card="3-3" style="opacity:.5">
+      <div class="label">CANDADO 3</div>
+      <p>El puerto de la IA solo acepta exactamente 16 Kilobytes de datos. Tu mensaje de 2 letras ya ocupa 2 Bytes.</p>
+      <p>¿Cuántos <strong>bits</strong> exactos de basura debes añadir (padding) para llenar perfectamente los 16 KB?</p>
+      <div class="row">
+        <input type="text" id="in-3-3" placeholder="Bits de padding" disabled>
+        <button onclick="check('3-3')" disabled id="btn-3-3">Verificar</button>
+      </div>
+      <div class="feedback" id="fb-3-3"></div>
+      <div class="locked-note" id="lock-3-3">🔒 Resuelve el Candado 2 primero.</div>
+    </div>
+  </section>
+
+  <!-- FINAL -->
+  <section class="screen" id="screen-end">
+    <div class="big-check">✔</div>
+    <h1 style="text-align:center;">OPERACIÓN COMPLETADA: SISTEMA REINICIADO</h1>
+    <div class="card">
+      <p>&gt; Inyección exitosa.<br>&gt; Purga de N.E.X.U.S. confirmada.<br>&gt; El Mainframe del instituto está seguro.</p>
+    </div>
+    <p>Tiempo restante al completar la misión: <strong id="finalTime">--:--</strong></p>
+    <h2>Informe de misión</h2>
+    <div class="card checklist">
+      <label><input type="checkbox"> Reúne tu bitácora táctica (tu cuaderno/documento).</label>
+      <label><input type="checkbox"> Detalla todos los pasos y cálculos matemáticos de cada nivel — no solo la respuesta, también el procedimiento.</label>
+      <label><input type="checkbox"> Entrega el informe a tu Comandante de Unidad (tu profesor/a) antes de que finalice el ciclo de red (fecha límite).</label>
+    </div>
+    <p style="color:#7f9e8f; font-size:.85rem;">&gt; FIN DE LA TRANSMISIÓN. BUEN TRABAJO.</p>
+  </section>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
