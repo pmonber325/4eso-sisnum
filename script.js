@@ -1,5 +1,5 @@
 const answers = {
-  '1-1': {check:v=>norm(v)==='11100', solve:1},
+  '1-1': {check:v=>norm(v)==='101111', solve:1},
   '1-2': {check:v=>norm(v)==='13', solve:1},
   '1-3': {check:v=>norm(v)==='937', solve:1},
   '2-1': {check:v=>norm(v)==='sos', solve:1},
