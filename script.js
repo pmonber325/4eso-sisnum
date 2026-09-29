@@ -112,10 +112,8 @@ function onSolve(key) {
     document.getElementById('lock-3-3').style.display = 'none';
   }
 
-console.log('LLEGÓ AL FINAL:', key);
   // CANDADO 3 → FINAL
   if (key === '3-3') {
-console.log('SCREEN-END:', document.getElementById('screen-end'));
   clearInterval(timerId);
 
   const timer = document.getElementById('timerBox');
