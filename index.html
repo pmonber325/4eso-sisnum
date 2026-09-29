@@ -78,7 +78,7 @@
 
     <div class="card" data-card="2-1">
       <div class="label">MÓDULO 1 · Intercepción de comunicaciones</div>
-      <p>Mensaje interceptado en código ASCII extendido:<br><strong>01000101 01011000 01001001 01010100 01001111</strong></p>
+      <p>Mensaje interceptado en código ASCII extendido:<br><strong>01000101 01011000 01001001 010100100 01001111</strong></p>
       <p class="hint">Pista: pasa cada byte a decimal. En la tabla ASCII, 65 es 'A'. ¿Qué palabra de 5 letras se transmite?</p>
       <div class="row">
         <input type="text" id="in-2-1" placeholder="Palabra descifrada">
@@ -127,9 +127,9 @@
 
     <div class="card" data-card="3-2" style="opacity:.5">
       <div class="label">CANDADO 2</div>
-      <p>Usa los tres números decimales del candado anterior y búscalos en la tabla ASCII. ¿Cuál es el mensaje de 3 letras que abre la puerta?</p>
+      <p>Usa los tres números decimales del candado anterior y búscalos en la tabla ASCII. ¿Cuál es el mensaje de 2 letras que abre la puerta?</p>
       <div class="row">
-        <input type="text" id="in-3-2" placeholder="Mensaje de 3 letras" disabled>
+        <input type="text" id="in-3-2" placeholder="Mensaje de 2 letras" disabled>
         <button onclick="check('3-2')" disabled id="btn-3-2">Verificar</button>
       </div>
       <div class="feedback" id="fb-3-2"></div>
@@ -155,6 +155,13 @@
     <h1 style="text-align:center;">OPERACIÓN COMPLETADA: SISTEMA REINICIADO</h1>
     <div class="card">
       <p>&gt; Inyección exitosa.<br>&gt; Purga de N.E.X.U.S. confirmada.<br>&gt; El Mainframe del instituto está seguro.</p>
+    </div>
+    <p>Tiempo restante al completar la misión: <strong id="finalTime">--:--</strong></p>
+    <h2>Informe de misión</h2>
+    <div class="card checklist">
+      <label><input type="checkbox"> Reúne tu bitácora táctica (tu cuaderno/documento).</label>
+      <label><input type="checkbox"> Detalla todos los pasos y cálculos matemáticos de cada nivel — no solo la respuesta, también el procedimiento.</label>
+      <label><input type="checkbox"> Entrega el informe a tu Comandante de Unidad (tu profesor/a) antes de que finalice el ciclo de red (fecha límite).</label>
     </div>
     <p style="color:#7f9e8f; font-size:.85rem;">&gt; FIN DE LA TRANSMISIÓN. BUEN TRABAJO.</p>
   </section>
