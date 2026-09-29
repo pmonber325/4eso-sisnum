@@ -117,9 +117,9 @@
 
     <div class="card" data-card="3-1">
       <div class="label">CANDADO 1</div>
-      <p>El delincuente cibernético dejó un rastro hexadecimal. Fragmento MAC: <strong>#57</strong>, <strong>#49</strong> y <strong>#4E</strong>. Convierte cada uno a decimal (sepáralos con un espacio o una coma).</p>
+      <p>El delincuente cibernético dejó un rastro hexadecimal. Fragmento MAC: <strong><ins></ins>#46 49 4E 41 4C 49 5A 41 44 4F</ins></strong>. Convierte cada byte a decimal (sepáralos con un espacio o una coma).</p>
       <div class="row">
-        <input type="text" id="in-3-1" placeholder="ej: 13, 93, 97">
+        <input type="text" id="in-3-1" placeholder="ej: 13, 93, 97, 21, 2, 11, 24, 78, 10, 65">
         <button onclick="check('3-1')">Verificar</button>
       </div>
       <div class="feedback" id="fb-3-1"></div>
@@ -127,9 +127,9 @@
 
     <div class="card" data-card="3-2" style="opacity:.5">
       <div class="label">CANDADO 2</div>
-      <p>Usa los tres números decimales del candado anterior y búscalos en la tabla ASCII. ¿Cuál es el mensaje de 2 letras que abre la puerta?</p>
+      <p>Usa los diez números decimales del candado anterior y búscalos en la tabla ASCII. ¿Cuál es el mensaje de 10 letras que abre la puerta?</p>
       <div class="row">
-        <input type="text" id="in-3-2" placeholder="Mensaje de 2 letras" disabled>
+        <input type="text" id="in-3-2" placeholder="Mensaje de 10 letras" disabled>
         <button onclick="check('3-2')" disabled id="btn-3-2">Verificar</button>
       </div>
       <div class="feedback" id="fb-3-2"></div>
@@ -138,7 +138,7 @@
 
     <div class="card" data-card="3-3" style="opacity:.5">
       <div class="label">CANDADO 3</div>
-      <p>El puerto de la IA solo acepta exactamente 8 Kilobytes de datos. Tu mensaje de 3 letras ya ocupa 3 Bytes.</p>
+      <p>El puerto de la IA solo acepta exactamente 8 Kilobytes de datos. Tu mensaje de 10 letras ya ocupa 10 Bytes.</p>
       <p>¿Cuántos <strong>bits</strong> exactos de basura debes añadir (padding) para llenar perfectamente los 8 KB?</p>
       <div class="row">
         <input type="text" id="in-3-3" placeholder="Bits de padding" disabled>
