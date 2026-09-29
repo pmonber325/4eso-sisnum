@@ -116,32 +116,32 @@ function onSolve(key) {
   // CANDADO 3 → FINAL
   if (key === '3-3') {
 
-    clearInterval(timerId);
+  clearInterval(timerId);
 
-    const timer = document.getElementById('timerBox');
-    const finalTime = document.getElementById('finalTime');
+  const timer = document.getElementById('timerBox');
+  const finalTime = document.getElementById('finalTime');
 
-    if (finalTime && timer) {
-      finalTime.textContent = timer.textContent;
-    }
+  if (finalTime && timer) {
+    finalTime.textContent = timer.textContent;
+  }
 
-    // CAMBIO DIRECTO A LA PANTALLA FINAL
-    document.querySelectorAll('.screen').forEach(function(screen) {
-      screen.classList.remove('active');
+  // Ocultar todas las pantallas
+  document.querySelectorAll('.screen').forEach(function(screen) {
+    screen.classList.remove('active');
+  });
+
+  // Mostrar pantalla final
+  const finalScreen = document.getElementById('screen-end');
+
+  if (finalScreen) {
+    finalScreen.classList.add('active');
+    document.getElementById('progressFill').style.width = '100%';
+
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
     });
-
-    const finalScreen = document.getElementById('screen-end');
-
-    if (finalScreen) {
-      finalScreen.classList.add('active');
-      updateProgress('end');
-
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    } else {
-      console.error('ERROR: No existe #screen-end en el HTML');
-    }
+  } else {
+    alert('ERROR: No se encuentra la sección screen-end');
   }
 }
