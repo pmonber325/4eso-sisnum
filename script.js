@@ -2,11 +2,11 @@ const answers = {
   '1-1': {check:v=>norm(v)==='101111', solve:1},
   '1-2': {check:v=>norm(v)==='56', solve:1},
   '1-3': {check:v=>norm(v)==='764', solve:1},
-  '2-1': {check:v=>norm(v)==='EXITO', solve:1},
-  '2-2': {check:v=>{const n=parseFloat(v.replace(',','.')); return !isNaN(n) && n===134217228;}, solve:1},
+  '2-1': {check:v=>norm(v)==='exito', solve:1},
+  '2-2': {check:v=>{const n=parseFloat(v.replace(',','.')); return !isNaN(n) && n===134217728;}, solve:1},
   '2-3': {check:v=>{const n=parseFloat(v.replace(',','.')); return !isNaN(n) && n===256;}, solve:1},
   '3-1': {check:v=>{const nums=v.match(/\d+/g); return nums && nums.length>=2 && nums.includes('87') && nums.includes('73')  && nums.includes('78');}, solve:1},
-  '3-2': {check:v=>norm(v)==='WIN', solve:1},
+  '3-2': {check:v=>norm(v)==='win', solve:1},
   '3-3': {check:v=>norm(v)==='65512', solve:1},
 };
 function norm(v){return (v||'').trim().toLowerCase().replace(/^0+(?=\d)/,'');}
