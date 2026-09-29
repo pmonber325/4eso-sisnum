@@ -83,6 +83,6 @@ function onSolve(key){
   if(key==='3-3'){
     clearInterval(timerId);
     document.getElementById('finalTime').textContent = document.getElementById('timerBox').textContent;
-    setTimeout(()=>show('end'),700);
+    setTimeout(()=>{show('end')},700);
   }
 }
