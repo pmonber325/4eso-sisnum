@@ -5,9 +5,9 @@ const answers = {
   '2-1': {check:v=>norm(v)==='exito', solve:1},
   '2-2': {check: v => v.trim()==='134217728', solve: 1},
   '2-3': {check: v => v.trim()==='256', solve: 1},
-  '3-1': {check:v=>{const nums=v.match(/\d+/g); return nums && nums.length>=2 && nums.includes('87') && nums.includes('73')  && nums.includes('78');}, solve:1},
-  '3-2': {check:v=>norm(v)==='win', solve:1},
-  '3-3': {check:v=>norm(v)==='65512', solve:1},
+  '3-1': {check:v=>{const nums=v.match(/\d+/g); return nums && nums.length>=2 && nums.includes('70') && nums.includes('73')  && nums.includes('78') && nums.includes('65') && nums.includes('76')  && nums.includes('73') && nums.includes('90') && nums.includes('65')  && nums.includes('68') && nums.includes('79');}, solve:1},
+  '3-2': {check:v=>norm(v)==='finalizado', solve:1},
+  '3-3': {check:v=>norm(v)==='65456', solve:1},
 };
 function norm(v){return (v||'').trim().toLowerCase().replace(/^0+(?=\d)/,'');}
 
