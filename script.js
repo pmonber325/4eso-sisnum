@@ -1,12 +1,12 @@
 const answers = {
   '1-1': {check:v=>norm(v)==='101111', solve:1},
-  '1-2': {check:v=>norm(v)==='13', solve:1},
-  '1-3': {check:v=>norm(v)==='937', solve:1},
-  '2-1': {check:v=>norm(v)==='sos', solve:1},
+  '1-2': {check:v=>norm(v)==='56', solve:1},
+  '1-3': {check:v=>norm(v)==='764', solve:1},
+  '2-1': {check:v=>norm(v)==='EXITO', solve:1},
   '2-2': {check:v=>{const n=parseFloat(v.replace(',','.')); return !isNaN(n) && Math.abs(n-214748364.8)<1500;}, solve:1},
   '2-3': {check:v=>{const n=parseFloat(v.replace(',','.')); return !isNaN(n) && Math.abs(n-14.375)<0.15;}, solve:1},
   '3-1': {check:v=>{const nums=v.match(/\d+/g); return nums && nums.length>=2 && nums.includes('79') && nums.includes('75');}, solve:1},
-  '3-2': {check:v=>norm(v)==='ok', solve:1},
+  '3-2': {check:v=>norm(v)==='WIN', solve:1},
   '3-3': {check:v=>norm(v)==='131056', solve:1},
 };
 function norm(v){return (v||'').trim().toLowerCase().replace(/^0+(?=\d)/,'');}
