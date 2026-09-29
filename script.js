@@ -65,24 +65,83 @@ function check(key){
     fb.className='feedback err';
   }
 }
-function onSolve(key){
-  if(key==='1-3' && solved['1-1'] && solved['1-2'] && solved['1-3']) setTimeout(()=>show('l2'),700);
-  if(key==='2-3' && solved['2-1'] && solved['2-2'] && solved['2-3']) setTimeout(()=>show('l3'),700);
-  if(key==='3-1'){
-    document.getElementById('in-3-2').disabled=false;
-    document.getElementById('btn-3-2').disabled=false;
-    document.querySelector('[data-card="3-2"]').style.opacity=1;
-    document.getElementById('lock-3-2').style.display='none';
+function onSolve(key) {
+
+  // NIVEL 1 → NIVEL 2
+  if (
+    key === '1-3' &&
+    solved['1-1'] &&
+    solved['1-2'] &&
+    solved['1-3']
+  ) {
+    setTimeout(function() {
+      show('l2');
+    }, 700);
   }
-  if(key==='3-2'){
-    document.getElementById('in-3-3').disabled=false;
-    document.getElementById('btn-3-3').disabled=false;
-    document.querySelector('[data-card="3-3"]').style.opacity=1;
-    document.getElementById('lock-3-3').style.display='none';
+
+
+  // NIVEL 2 → NIVEL 3
+  if (
+    key === '2-3' &&
+    solved['2-1'] &&
+    solved['2-2'] &&
+    solved['2-3']
+  ) {
+    setTimeout(function() {
+      show('l3');
+    }, 700);
   }
-  if(key==='3-3'){
+
+
+  // CANDADO 1 → CANDADO 2
+  if (key === '3-1') {
+    document.getElementById('in-3-2').disabled = false;
+    document.getElementById('btn-3-2').disabled = false;
+
+    document.querySelector('[data-card="3-2"]').style.opacity = '1';
+    document.getElementById('lock-3-2').style.display = 'none';
+  }
+
+
+  // CANDADO 2 → CANDADO 3
+  if (key === '3-2') {
+    document.getElementById('in-3-3').disabled = false;
+    document.getElementById('btn-3-3').disabled = false;
+
+    document.querySelector('[data-card="3-3"]').style.opacity = '1';
+    document.getElementById('lock-3-3').style.display = 'none';
+  }
+
+
+  // CANDADO 3 → FINAL
+  if (key === '3-3') {
+
     clearInterval(timerId);
-    document.getElementById('finalTime').textContent = document.getElementById('timerBox').textContent;
-    setTimeout(()=>{show('end')},700);
+
+    const timer = document.getElementById('timerBox');
+    const finalTime = document.getElementById('finalTime');
+
+    if (finalTime && timer) {
+      finalTime.textContent = timer.textContent;
+    }
+
+    // CAMBIO DIRECTO A LA PANTALLA FINAL
+    document.querySelectorAll('.screen').forEach(function(screen) {
+      screen.classList.remove('active');
+    });
+
+    const finalScreen = document.getElementById('screen-end');
+
+    if (finalScreen) {
+      finalScreen.classList.add('active');
+      updateProgress('end');
+
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    } else {
+      console.error('ERROR: No existe #screen-end en el HTML');
+    }
   }
 }
